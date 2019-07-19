@@ -1,0 +1,62 @@
+<html>
+<script>
+
+function olah() {
+    return 'Olá Mundo!!!';
+}
+
+function ehNumero(numero) {
+    return !isNaN(numero);
+}
+
+function soNumero(texto) {
+    let numero = '';
+    do {
+        numero = prompt(texto);
+        numero = parseFloat(numero);
+        if (ehNumero(numero)) {
+            return numero;
+        }
+    } while(!ehNumero(numero));
+}
+
+function somaVetor(vetor) {
+    let soma = 0;
+    for (let i = 0; i < vetor.length; i++) {
+        if (ehNumero(vetor[i])) {
+            soma += vetor[i];
+        }
+    }
+    return soma;
+}
+
+function fatorial(numero) {
+    if (ehNumero(numero)) {
+        let resultado = 1;
+        for (let i = numero; i > 0; i--) {
+            resultado *= i;
+        }
+        return resultado;
+    }
+    return 0;
+}
+
+function fatorialR(numero) {
+    if (numero == 1) {
+        return 1;
+    } else {
+        return numero * fatorialR(numero - 1);
+    }
+    //return numero == 1 ? 1 : numero * fatorialR(numero - 1);
+}
+
+// 4 * 1 -> 4 * 3 -> 12 * 2 -> 24 * 1;
+//let numero1 = soNumero('Diga o número 1');
+//let numero2 = soNumero('Diga o número 2');
+
+let numeros = ['te', 1, 5, 'wes', 2];
+
+alert(fatorialR(5));
+
+</script>
+</html>
